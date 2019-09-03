@@ -20,7 +20,7 @@ export default (state = INITIAL_STATE, action) => {
         case "NOME_INPUT": return {...state, nome: action.info}
         case "EMAIL_INPUT": return {...state, email: action.info}
         case "ASSUNTO_INPUT": return {...state, assunto: action.info}
-        case "ENVIAR_CONTATO": return {INITIAL_STATE}
+        case "ENVIAR_CONTATO": return INITIAL_STATE
 
         default: return state
 

@@ -22,7 +22,7 @@ export const assuntoInput = e => ({
     info: e.target.value
 })
 
-export const enviarContato = async(data, nome, email, assunto) => {
+export const enviarContato = (data, nome, email, assunto) => {
     const request = axios.post(URL, {data, nome, email, assunto})
     return {
         type: "ENVIAR_CONTATO",

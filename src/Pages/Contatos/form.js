@@ -7,14 +7,14 @@ class Form extends React.Component{
 
 constructor(props){
     super(props)
-    //this.props.bind(this)
+    this.enviar = this.enviar.bind(this)
 }
 
-    enviar = async(e) => {
+    enviar = (e) => {
         
         e.preventDefault() //não faz o submit
 
-        const { data, nome, email, assunto } = this.props;
+        const { enviarContato, data, nome, email, assunto } = this.props;
 
         if (
             (!data || data === '')
@@ -26,9 +26,8 @@ constructor(props){
                 return;
             }
 
-        enviarContato(data, nome, email, assunto).then(_ =>{
-            alert("Dados enviados com sucesso. Aguarde nosso retorno!")
-        })
+        enviarContato(data, nome, email, assunto)
+        alert("Dados enviados com sucesso. Aguarde nosso retorno!")
 
     }
 
